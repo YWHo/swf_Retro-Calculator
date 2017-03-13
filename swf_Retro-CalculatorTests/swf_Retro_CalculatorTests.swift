@@ -34,16 +34,41 @@ class swf_Retro_CalculatorTests: XCTestCase {
         XCTAssertNotNil(AudioService.instance.createPlayerWithUrl(audioURL: AudioService.instance.btnUrl!))
     }
     
-//    func testExample() {
-//        // This is an example of a functional test case.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-//    
-//    func testPerformanceExample() {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
+    func testCalcService() {
+        XCTAssertNotNil(CalcService.instance)
+        XCTAssertEqual(CalcService.Operation.Add.rawValue, "+", "Incorrect Operator")
+        XCTAssertEqual(CalcService.Operation.Divide.rawValue, "/", "Incorrect Operator")
+        XCTAssertEqual(CalcService.Operation.Empty.rawValue, "Empty", "Incorrect Operator")
+        XCTAssertEqual(CalcService.Operation.Multiply.rawValue, "*", "Incorrect Operator")
+        XCTAssertEqual(CalcService.Operation.Subtract.rawValue, "-", "Incorrect Operator")
+    }
+    
+    func testCalcServiceMultiply() {
+        XCTAssertNil(CalcService.instance.multiply(numStrA: "dbe", numStrB: "kkm"))
+        XCTAssertNotNil(CalcService.instance.multiply(numStrA: "10", numStrB: "15"))
+        XCTAssertEqual(CalcService.instance.multiply(numStrA: "5", numStrB: "4"), "20.0")
+        
+    }
+    
+    func testCalcServiceDivide() {
+        XCTAssertNil(CalcService.instance.divide(numStrA: "eef", numStrB: "llm"))
+        XCTAssertNil(CalcService.instance.divide(numStrA: "9", numStrB: "0"))
+        XCTAssertNotNil(CalcService.instance.divide(numStrA: "10", numStrB: "3"))
+        XCTAssertEqual(CalcService.instance.divide(numStrA: "100", numStrB: "4"), "25.0")
+    }
+    
+    func testCalcServiceAdd() {
+        XCTAssertNil(CalcService.instance.add(numStrA: "edg", numStrB: "kkm"))
+        XCTAssertNotNil(CalcService.instance.add(numStrA: "10", numStrB: "15"))
+        XCTAssertEqual(CalcService.instance.add(numStrA: "5", numStrB: "4"), "9.0")
+    }
+    
+
+    func testCalcServiceSubtract() {
+        XCTAssertNil(CalcService.instance.subtract(numStrA: "gdfg", numStrB: "kkm"))
+        XCTAssertNotNil(CalcService.instance.subtract(numStrA: "10", numStrB: "15"))
+        XCTAssertEqual(CalcService.instance.subtract(numStrA: "25", numStrB: "4"), "21.0")
+    }
+
     
 }

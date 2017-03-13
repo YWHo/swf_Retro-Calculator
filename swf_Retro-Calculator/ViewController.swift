@@ -10,22 +10,14 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-
-    enum Operation: String {
-        case Divide = "/"
-        case Multiply = "*"
-        case Subtract = "-"
-        case Add = "+"
-        case Empty = "Empty"
-    }
     
     @IBOutlet weak var outputLbl: UILabel!
     var player: AVAudioPlayer!
     var runningNumber = ""
     var leftValStr = ""
     var rightValStr = ""
-    var currentOperation: Operation = Operation.Empty
-    var result = ""
+    var currentOperation = CalcService.Operation.Empty
+    var result: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,29 +34,29 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onDividePressed(_ sender: UIButton) {
-        processOperation(op: Operation.Divide)
+        processOperation(op: CalcService.Operation.Divide)
     }
 
     @IBAction func onMultiplyPressed(_ sender: UIButton) {
-        processOperation(op: Operation.Multiply)
+        processOperation(op: CalcService.Operation.Multiply)
     }
     
     @IBAction func onSubtractPressed(_ sender: UIButton) {
-        processOperation(op: Operation.Subtract)
+        processOperation(op: CalcService.Operation.Subtract)
     }
 
     @IBAction func onAddPressed(_ sender: UIButton) {
-        processOperation(op: Operation.Add)
+        processOperation(op: CalcService.Operation.Add)
     }
     
     @IBAction func onEqualPressed(_ sender: UIButton) {
         processOperation(op: currentOperation)
     }
     
-    func processOperation(op: Operation) {
+    func processOperation(op: CalcService.Operation) {
         playSound()
         
-        if currentOperation != Operation.Empty {
+        if currentOperation != CalcService.Operation.Empty {
             // Run some math
             
             // A user selected an operator, but then selected another
@@ -75,18 +67,21 @@ class ViewController: UIViewController {
                 runningNumber = ""
                 
                 
-                if currentOperation == Operation.Multiply {
-                    result = "\(Double(leftValStr)! * Double(rightValStr)!)"
-                } else if currentOperation == Operation.Divide {
-                    result = "\(Double(leftValStr)! / Double(rightValStr)!)"
-                } else if currentOperation == Operation.Subtract {
-                    result = "\(Double(leftValStr)! - Double(rightValStr)!)"
-                } else if currentOperation == Operation.Add {
-                    result = "\(Double(leftValStr)! + Double(rightValStr)!)"
+                if currentOperation == CalcService.Operation.Multiply {
+                    result = CalcService.instance.multiply(numStrA: leftValStr, numStrB: rightValStr)
+                } else if currentOperation == CalcService.Operation.Divide {
+                    result = CalcService.instance.divide(numStrA: leftValStr, numStrB: rightValStr)
+                } else if currentOperation == CalcService.Operation.Subtract {
+                    result = CalcService.instance.subtract(numStrA: leftValStr, numStrB: rightValStr)
+                } else if currentOperation == CalcService.Operation.Add {
+                    result = CalcService.instance.add(numStrA: leftValStr, numStrB: rightValStr)
                 }
                 
-                leftValStr = result
-                outputLbl.text = result
+                if let theResult = result {
+                    leftValStr = theResult
+                    outputLbl.text = theResult
+                }
+
             }
             
             currentOperation = op

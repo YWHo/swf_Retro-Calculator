@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E85A85B1E763EDF0093DAAD /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85A85A1E763EDF0093DAAD /* AudioService.swift */; };
 		5E85A85C1E763FF20093DAAD /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85A85A1E763EDF0093DAAD /* AudioService.swift */; };
+		5E85A85E1E768B940093DAAD /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85A85D1E768B940093DAAD /* CalcService.swift */; };
+		5E85A85F1E768B940093DAAD /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85A85D1E768B940093DAAD /* CalcService.swift */; };
 		5EBCADAF1E75610300CAB3E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCADAE1E75610300CAB3E6 /* AppDelegate.swift */; };
 		5EBCADB11E75610300CAB3E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCADB01E75610300CAB3E6 /* ViewController.swift */; };
 		5EBCADB41E75610300CAB3E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCADB21E75610300CAB3E6 /* Main.storyboard */; };
@@ -39,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		5E85A85A1E763EDF0093DAAD /* AudioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		5E85A85D1E768B940093DAAD /* CalcService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
 		5EBCADAB1E75610300CAB3E6 /* swf_Retro-Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swf_Retro-Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBCADAE1E75610300CAB3E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EBCADB01E75610300CAB3E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				5E85A85A1E763EDF0093DAAD /* AudioService.swift */,
+				5E85A85D1E768B940093DAAD /* CalcService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -282,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E85A85E1E768B940093DAAD /* CalcService.swift in Sources */,
 				5EBCADB11E75610300CAB3E6 /* ViewController.swift in Sources */,
 				5EBCADAF1E75610300CAB3E6 /* AppDelegate.swift in Sources */,
 				5E85A85B1E763EDF0093DAAD /* AudioService.swift in Sources */,
@@ -293,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E85A85C1E763FF20093DAAD /* AudioService.swift in Sources */,
+				5E85A85F1E768B940093DAAD /* CalcService.swift in Sources */,
 				5EBCADC41E75610300CAB3E6 /* swf_Retro_CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
