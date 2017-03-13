@@ -16,12 +16,11 @@ class ViewController: UIViewController {
         case Multiply = "*"
         case Subtract = "-"
         case Add = "+"
-        //case Equals = "="
         case Empty = "Empty"
     }
     
     @IBOutlet weak var outputLbl: UILabel!
-    var btnSound: AVAudioPlayer!
+    var player: AVAudioPlayer!
     var runningNumber = ""
     var leftValStr = ""
     var rightValStr = ""
@@ -30,14 +29,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let path = Bundle.main.path(forResource: "btn", ofType: "wav")
-        let soundUrl = URL(fileURLWithPath: path!)
-        do {
-            try btnSound = AVAudioPlayer(contentsOf: soundUrl)
-        } catch let err as NSError {
-            print(err.debugDescription)
-        }
+
+        player = AudioService.instance.createPlayerWithUrl(audioURL: AudioService.instance.btnUrl!)
+        player?.prepareToPlay()
     }
 
     @IBAction func numberPressed(btn: UIButton!) {
@@ -106,11 +100,11 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-        if btnSound.isPlaying {
-            btnSound.stop()
+        if player.isPlaying {
+            player.stop()
         }
         
-        btnSound.play()
+        player.play()
     }
     
 }

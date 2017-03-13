@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E85A85B1E763EDF0093DAAD /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85A85A1E763EDF0093DAAD /* AudioService.swift */; };
+		5E85A85C1E763FF20093DAAD /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85A85A1E763EDF0093DAAD /* AudioService.swift */; };
 		5EBCADAF1E75610300CAB3E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCADAE1E75610300CAB3E6 /* AppDelegate.swift */; };
 		5EBCADB11E75610300CAB3E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCADB01E75610300CAB3E6 /* ViewController.swift */; };
 		5EBCADB41E75610300CAB3E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCADB21E75610300CAB3E6 /* Main.storyboard */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E85A85A1E763EDF0093DAAD /* AudioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		5EBCADAB1E75610300CAB3E6 /* swf_Retro-Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swf_Retro-Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBCADAE1E75610300CAB3E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EBCADB01E75610300CAB3E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E85A8591E763ECA0093DAAD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5E85A85A1E763EDF0093DAAD /* AudioService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		5EBCADA21E75610300CAB3E6 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +112,7 @@
 		5EBCADAD1E75610300CAB3E6 /* swf_Retro-Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				5E85A8591E763ECA0093DAAD /* Services */,
 				5EBCADDC1E75766800CAB3E6 /* Minecraft.ttf */,
 				5EBCADDE1E76048500CAB3E6 /* btn.wav */,
 				5EBCADAE1E75610300CAB3E6 /* AppDelegate.swift */,
@@ -272,6 +284,7 @@
 			files = (
 				5EBCADB11E75610300CAB3E6 /* ViewController.swift in Sources */,
 				5EBCADAF1E75610300CAB3E6 /* AppDelegate.swift in Sources */,
+				5E85A85B1E763EDF0093DAAD /* AudioService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E85A85C1E763FF20093DAAD /* AudioService.swift in Sources */,
 				5EBCADC41E75610300CAB3E6 /* swf_Retro_CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +538,7 @@
 				5EBCADD51E75610300CAB3E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EBCADD61E75610300CAB3E6 /* Build configuration list for PBXNativeTarget "swf_Retro-CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +547,7 @@
 				5EBCADD81E75610300CAB3E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EBCADD91E75610300CAB3E6 /* Build configuration list for PBXNativeTarget "swf_Retro-CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +556,7 @@
 				5EBCADDB1E75610300CAB3E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
