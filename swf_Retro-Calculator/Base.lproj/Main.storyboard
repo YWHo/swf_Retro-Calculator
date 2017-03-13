@@ -248,7 +248,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="455638834556" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P12-g7-boR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P12-g7-boR">
                                 <rect key="frame" x="78" y="162" width="257" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CFD-MC-ghH"/>
@@ -281,6 +281,9 @@
                             <constraint firstItem="FAw-FW-npG" firstAttribute="top" secondItem="5Pg-NV-AHq" secondAttribute="bottom" constant="-6" id="xBi-7U-bY0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputLbl" destination="P12-g7-boR" id="rMN-ux-5Lk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
