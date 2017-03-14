@@ -88,7 +88,11 @@ class ViewController: UIViewController {
         } else {
             // This is the first time an operator has been pressed
             
-            leftValStr = runningNumber
+            if runningNumber == "" {
+                leftValStr = "0"
+            } else {
+                leftValStr = runningNumber
+            }
             runningNumber = ""
             currentOperation = op
         }
