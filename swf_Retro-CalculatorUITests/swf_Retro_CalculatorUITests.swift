@@ -28,9 +28,37 @@ class swf_Retro_CalculatorUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCalc() {
+        
+        let app = XCUIApplication()
+        
+        let buttonFive = app.buttons["5"]
+        buttonFive.tap()
+        app.buttons["add"].tap()
+        buttonFive.tap()
+        
+        let equalButton = app.buttons["equal"]
+        equalButton.tap()
+        
+        XCTAssertTrue(app.staticTexts["10.0"].exists)
+        
+        app.buttons["divide"].tap()
+        app.buttons["2"].tap()
+        equalButton.tap()
+        
+        XCTAssertTrue(app.staticTexts["5.0"].exists)
+        
+        app.buttons["multiply"].tap()
+        buttonFive.tap()
+        equalButton.tap()
+        
+        XCTAssertTrue(app.staticTexts["25.0"].exists)
+        
+        app.buttons["subtract"].tap()
+        app.buttons["4"].tap()
+        equalButton.tap()
+        
+        XCTAssertTrue(app.staticTexts["21.0"].exists)
     }
     
 }
