@@ -12,7 +12,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var outputLbl: UILabel!
-    var player: AVAudioPlayer!
+    //var player: AVAudioPlayer!
     var runningNumber = ""
     var leftValStr = ""
     var rightValStr = ""
@@ -22,8 +22,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        player = AudioService.instance.createPlayerWithUrl(audioURL: AudioService.instance.btnUrl!)
-        player?.prepareToPlay()
+        AudioService.instance.soundFXPlayer = AudioService.instance.createPlayerWithUrl(audioURL: AudioService.instance.btnUrl!)
+        AudioService.instance.soundFXPlayer?.prepareToPlay()
+
     }
 
     @IBAction func numberPressed(btn: UIButton!) {
@@ -99,12 +100,9 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-        if player.isPlaying {
-            player.stop()
-        }
-        
-        player.play()
+        _ = AudioService.instance.playCurrentSoundFX()
     }
+
     
 }
 

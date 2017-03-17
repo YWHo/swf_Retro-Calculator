@@ -12,6 +12,17 @@ import AVFoundation
 class AudioService {
     static let instance = AudioService()  // Singleton
     
+    private var _soundFXPlayer: AVAudioPlayer?
+    
+    var soundFXPlayer: AVAudioPlayer? {
+        get {
+            return _soundFXPlayer
+        }
+        set {
+            _soundFXPlayer = newValue
+        }
+    }
+    
     var btnUrl: URL? {
         if let urlStr = pathForResource(filename: "btn", filetype: "wav") {
             return URL(string: urlStr)
@@ -32,4 +43,20 @@ class AudioService {
             return nil
         }
     }
+
+    func playCurrentSoundFX() -> Bool {
+        if let player = soundFXPlayer {
+            if player.isPlaying {
+                player.stop()
+            }
+            
+            player.play()
+            
+            return player.isPlaying
+        }
+        
+        return false    // means cannot play
+    }
+    
+    
 }

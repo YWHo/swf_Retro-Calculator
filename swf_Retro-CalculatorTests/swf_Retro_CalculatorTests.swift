@@ -24,14 +24,16 @@ class swf_Retro_CalculatorTests: XCTestCase {
     func testAudioService() {
         
         XCTAssertNotNil(AudioService.instance)
-        
         XCTAssertNotNil(AudioService.instance.pathForResource(filename: "btn", filetype: "wav"))
-        
         XCTAssertNotNil(AudioService.instance.btnUrl)
-        
         XCTAssertNil(AudioService.instance.createPlayerWithUrl(audioURL: URL(string: "a")!))
-        
         XCTAssertNotNil(AudioService.instance.createPlayerWithUrl(audioURL: AudioService.instance.btnUrl!))
+        XCTAssertNil(AudioService.instance.soundFXPlayer)
+        XCTAssertFalse(AudioService.instance.playCurrentSoundFX())
+        
+        AudioService.instance.soundFXPlayer = AudioService.instance.createPlayerWithUrl(audioURL: AudioService.instance.btnUrl!)
+        XCTAssertNotNil(AudioService.instance.soundFXPlayer)
+        XCTAssertTrue(AudioService.instance.playCurrentSoundFX())
     }
     
     func testCalcService() {
@@ -70,5 +72,4 @@ class swf_Retro_CalculatorTests: XCTestCase {
         XCTAssertEqual(CalcService.instance.subtract(numStrA: "25", numStrB: "4"), "21.0")
     }
 
-    
 }
